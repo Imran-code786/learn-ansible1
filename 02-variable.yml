@@ -36,7 +36,7 @@
       - LINUX
       - DOCKER
       - KUBERNETS
-  task:
+  tasks:
     - name: print list
       ansible.builtin.debug:
         msg: "{{ TOOLS }}"
