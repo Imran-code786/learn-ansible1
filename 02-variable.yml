@@ -29,14 +29,29 @@
 
 ### list variable ##
 
-- name: list example
+#- name: list example
+#  hosts: localhost
+#  vars:
+#    TOOLS:
+#      - LINUX
+#      - DOCKER
+#      - KUBERNETS
+#  tasks:
+#    - name: print list
+#      ansible.builtin.debug:
+#        msg: "{{ TOOLS }}"
+
+
+## Dictionary variable##
+
+- name: Dictionary variable
   hosts: localhost
   vars:
-    TOOLS:
-      - LINUX
-      - DOCKER
-      - KUBERNETS
+    Employee:
+      name: Imran
+      role: devops
+
   tasks:
-    - name: print list
+    - name: Print directory
       ansible.builtin.debug:
-        msg: "{{ TOOLS }}"
+        msg: "Name = {{ Employee.name }}, Role = {{ Employee.role }}"
