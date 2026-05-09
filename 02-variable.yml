@@ -1,6 +1,17 @@
-- name: variable for inventory
-  hosts: TEST
+#- name: variable for inventory
+#  hosts: TEST
+#  tasks:
+#    - name: Print URL
+#      ansible.builtin.debug:
+#        msg: "URL - {{ URL }}"
+
+- name: Variable Example
+  hosts: localhost
+  vars:
+    COURSE: DevOps
+    TRAINER: Imran
+
   tasks:
-    - name: Print URL
+    - name: Print variable
       ansible.builtin.debug:
-        msg: "URL - {{ URL }}"
+        msg: "COURSE= {{ COURSE }} - Trainer= {{ TRAINER }}"
