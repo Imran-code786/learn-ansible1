@@ -5,13 +5,21 @@
 #      ansible.builtin.debug:
 #        msg: "URL - {{ URL }}"
 
-- name: Variable Example
-  hosts: localhost
-  vars:
-    COURSE: DevOps
-    TRAINER: Imran
+#- name: Variable Example
+#  hosts: localhost
+#  vars:
+#    COURSE: DevOps
+#    TRAINER: Imran
+#
+#  tasks:
+#    - name: Print variable
+#      ansible.builtin.debug:
+#        msg: "COURSE= {{ COURSE }} - Trainer= {{ TRAINER }}"
 
+
+- name: Extra variable
+  hosts: localhost
   tasks:
     - name: Print variable
       ansible.builtin.debug:
-        msg: "COURSE= {{ COURSE }} - Trainer= {{ TRAINER }}"
+        msg: "Name = {{ NAME }}"
