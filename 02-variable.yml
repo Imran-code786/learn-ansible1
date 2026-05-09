@@ -44,14 +44,41 @@
 
 ## Dictionary variable##
 
-- name: Dictionary variable
-  hosts: localhost
-  vars:
-    Employee:
-      name: Imran
-      role: devops
+#- name: Dictionary variable
+#  hosts: localhost
+#  vars:
+#    Employee:
+#      name: Imran
+#      role: devops
+#
+#  tasks:
+#    - name: Print directory
+#      ansible.builtin.debug:
+#        msg: "Name = {{ Employee.name }}, Role = {{ Employee.role }}"
 
+
+## Register variable##
+
+- name: Register Example
+  hosts: localhost
   tasks:
-    - name: Print directory
+    - name: Run command
+      ansible.builtin.shell: uptime
+      register: OUTPUT
+
+    - name: Print output
       ansible.builtin.debug:
-        msg: "Name = {{ Employe.name }}, Role = {{ Employee.role }}"
+        msg: "{{ OUTPUT.stdout }}"
+
+
+
+
+
+
+
+
+
+
+
+
+
