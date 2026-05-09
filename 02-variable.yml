@@ -16,10 +16,27 @@
 #      ansible.builtin.debug:
 #        msg: "COURSE= {{ COURSE }} - Trainer= {{ TRAINER }}"
 
+### Command line variables(-e)###
+#- name: Extra variable
+#  hosts: localhost
+#  tasks:
+#    - name: Print variable
+#      ansible.builtin.debug:
+#        msg: "Name = {{ NAME }}"
 
-- name: Extra variable
+ ## server:-  ansible-playbook demo.yml -e NAME=imran #
+
+
+### list variable ##
+
+- name: list example
   hosts: localhost
-  tasks:
-    - name: Print variable
+  vars:
+    TOOLS:
+      - LINUX
+      - DOCKER
+      - KUBERNETS
+  task:
+    - name: print list
       ansible.builtin.debug:
-        msg: "Name = {{ NAME }}"
+        msg: "{{ TOOLS }}"
