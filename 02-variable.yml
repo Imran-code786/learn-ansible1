@@ -1,0 +1,6 @@
+- name: Variable from inventory
+  hosts: TEST
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL - {{ URL }}. COMPONENT - {{ COMPONENT }}
