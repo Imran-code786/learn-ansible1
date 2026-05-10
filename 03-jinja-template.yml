@@ -5,10 +5,10 @@
     student: { name: steve, course: DevOps }
 
   tasks:
-    - name: Copy filr
-      ansible.builtin.copy:
-        src: sample.txt
-        dest: /tmp/h1.txt
+#    - name: Copy filr
+#      ansible.builtin.copy:
+#        src: sample.txt
+#        dest: /tmp/h1.txt
 
     - name: copt tem
       ansible.builtin.template:
