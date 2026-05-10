@@ -59,20 +59,30 @@
 
 ## Register variable##
 
-- name: Register Example
+#- name: Register Example
+#  hosts: localhost
+#  tasks:
+#    - name: Run command
+#      ansible.builtin.shell: uptime
+#      register: OUTPUT
+#
+#    - name: Print output
+#      ansible.builtin.debug:
+#        msg: "{{ OUTPUT.stdout }}"
+
+
+
+- name: prompt your name
   hosts: localhost
+
+  vars_prompt:
+    - name: USERNAME
+      prompt: Enter your name
+      private: no
   tasks:
-    - name: Run command
-      ansible.builtin.shell: uptime
-      register: OUTPUT
-
-    - name: Print output
+    - name: print
       ansible.builtin.debug:
-        msg: "{{ OUTPUT.stdout }}"
-
-
-
-
+        msg: "Hello {{ USERNAME }}"
 
 
 
