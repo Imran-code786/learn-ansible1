@@ -6,6 +6,6 @@
 
   tasks:
     - name: Copy filr
-      ansible.builtin.debug:
+      ansible.builtin.copy:
         src: sample.txt
         dest: /tmp/h1.txt
