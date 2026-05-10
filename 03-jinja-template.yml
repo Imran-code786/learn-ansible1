@@ -1,0 +1,11 @@
+- name: Variable from inventory
+  hosts: localhost
+  connection: local
+  vars:
+    student: { name: steve, course: DevOps }
+
+  tasks:
+    - name: Copy filr
+      ansible.builtin.debug:
+        src: sample.txt
+        dest: /tmp/h1.txt
