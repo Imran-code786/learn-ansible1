@@ -2,8 +2,9 @@
   hosts: localhost
   connection: local
   vars:
-    student: { name: steve, course: DevOps }
-
+    student:
+      name: Imran
+      course: DevOps
   tasks:
 #    - name: Copy filr
 #      ansible.builtin.copy:
@@ -13,4 +14,4 @@
     - name: copt tem
       ansible.builtin.template:
         src: sample.txt.j2
-        dest: /tmp/h2.txt
+        dest: /tmp/output.txt
